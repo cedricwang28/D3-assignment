@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Various Charts of Doom!</title>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            position: relative;
+            font-size: 1.8em;
+            color: rgb(47, 79, 79);
+            text-align: center;
+            /* margin-top:2em; */
+            margin-bottom: 2em;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        div {
+            text-align: center;
+        }
+
+
+        .axisLables {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .bar {
+            padding: 20px;
+            width: 100%;
+            background-color: #D4EFDF;
+        }
+
+        .line {
+            padding: 20px;
+            width: 100%;
+            background-color: #FCF3CF;
+        }
+
+        .mix {
+            padding: 20px;
+            width: 100%;
+            background-color: #EBDEF0;
+        }
+
+        text {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        #mainArea {
+            position: relative;
+            margin-top: 100px;
+        }
+
+        /* styling for the drop down menu */
+        #instruction {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        select {
+            font-size: 18px;
+            margin-top: 60px;
+            padding: 5px;
+            color: #5F426A;
+            position: absolute;
+        }
+
+        h3 {
+            position: absolute;
+            padding-top: 50px;
+            color: #9B8CA1;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* hide the title at the very first */
+        .glakes {
+            display: none;
+        }
+
+        .arctic {
+            display: none;
+        }
+
+        /* animating the labels when hovering on the line chart or bar chart */
+        rect:hover~text {
+            display: block;
+        }
+
+        path:hover~.textGroup>text {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="instruction">
+        <h3>Check The Area's Precipitation and Temperature Of A Particular Season</h3>
+        <select name="region" id="region">
+            <option selected="selected" value="">------select your region------</option>
+            <option value="arcticMountains">Arctic Mountains and Fiords</option>
+            <option value="greatLakes">Great Lakes and St.Lawrence</option>
+        </select>
+    </div>
+
+    <div id="mainArea">
+        <div class="bar">
+            <h1 class="glakes">Precipitation of Great Lakes and St.Lawrence in Spring</h1>
+            <h1 class="arctic">Annual Precipitation of Arctic Mountains and Fiords</h1>
+            <svg id="barSpace"></svg>
+        </div>
+
+        <div class="line">
+            <h1 class="glakes">Temperature of Great Lakes and St.Lawrence in Spring</h1>
+            <h1 class="arctic">Annual Temperature of Arctic Mountains and Fiords</h1>
+            <svg id="lineSpace"></svg>
+        </div>
+
+        <div class="mix">
+            <h1 class="glakes">Precipitation and Temperature of Great Lakes and St.Lawrence in Spring</h1>
+            <h1 class="arctic">Annual Precipitation and Temperature of Arctic Mountains and Fiords</h1>
+            <svg id="mixSpace"></svg>
+        </div>
+    </div>
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
